@@ -318,6 +318,7 @@ private extension Siren {
             self.launchAppStore()
             self.delegate?.sirenUserDidLaunchAppStore()
             self.alertViewIsVisible = false
+            UserDefaults.shouldPerformVersionCheckOnSubsequentLaunch = true
             return
         }
 
@@ -332,7 +333,6 @@ private extension Siren {
             self.hideWindow()
             self.delegate?.sirenUserDidCancel()
             self.alertViewIsVisible = false
-            UserDefaults.shouldPerformVersionCheckOnSubsequentLaunch = true
             return
         }
 
@@ -352,6 +352,7 @@ private extension Siren {
             self.hideWindow()
             self.delegate?.sirenUserDidSkipVersion()
             self.alertViewIsVisible = false
+            removeVersionCheckDate()
             return
         }
 

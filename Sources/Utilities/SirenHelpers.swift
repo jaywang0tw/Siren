@@ -31,6 +31,12 @@ extension Siren {
             UserDefaults.standard.synchronize()
         }
     }
+
+    func removeVersionCheckDate() {
+        lastVersionCheckPerformedOnDate = nil
+        UserDefaults.storedVersionCheckDate = nil
+        UserDefaults.standard.synchronize()
+    }
 }
 
 // MARK: - Miscellaneous
