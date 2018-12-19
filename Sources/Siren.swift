@@ -352,7 +352,7 @@ private extension Siren {
             self.hideWindow()
             self.delegate?.sirenUserDidSkipVersion()
             self.alertViewIsVisible = false
-            removeVersionCheckDate()
+            self.removeVersionCheckDate()
             return
         }
 
